@@ -1,0 +1,89 @@
+﻿@import "bootstrap/variables";
+
+$player1-color: #FFB000;
+$player2-color: #25B79F;
+
+.hit, .miss{
+   img{
+       border:none;
+       width:100%;
+   }
+}
+
+.battlefield{
+        border: 8px solid $player1-color;
+
+        table {
+          width: 100%;
+            td {
+              width: 10%;
+              position: relative;
+              border: 2px solid gray;
+
+              .centered-content {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  display:flex;
+                  justify-content:center;
+                  align-items:center;
+                  &.not-fired{
+                        &:hover{
+                            background-color:$player2-color;
+                            opacity: 0.3;
+                        }
+                    }
+                }                
+            }
+            td:after {
+              content: '';
+              display: block;
+              margin-top: 100%;
+            }
+        }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .battlefield{
+        margin-bottom:15px;
+    }
+} 
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+    @for $i from 1 through $grid-columns {
+        .col-xs-#{$i} {
+        padding:  0;
+      }
+  }
+}     
+.scoreboard{
+    text-align:center;
+    height: 150px;
+    font-weight: bold;
+    font-size: 2em;
+
+    &.player1{
+        background-color: $player1-color;
+    }
+    &.player2{
+        background-color: $player2-color;
+    }
+    .score{
+        border-bottom:2px solid gray;
+        font-size: 2em;
+        line-height: 1.6em;
+    }
+}
+.ship{
+    img{
+        width:100%
+    }
+    margin: 10px 0px;
+}
+.ship-live-points{
+    img{
+        width: 15%;
+    }
+    padding-top: 25px;
+}

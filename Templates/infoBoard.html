@@ -1,0 +1,25 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-md-12 col-sm-5">
+        <div class="col-xs-6 scoreboard player1">
+            <div class="score">
+                {{ctrl.getScore()}}
+            </div>
+            player 1
+        </div>
+        <div class="col-xs-6 scoreboard player2">
+            <div class="score">
+                0
+            </div>
+            player 2
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-12 col-sm-7">
+        <div ng-repeat="ship in ctrl.getShips()" class="row">
+            <div class="col-xs-6 ship">
+                <img src="/Content/assets/{{ship.type}}.png" />
+            </div>
+            <div class="col-xs-6 ship-live-points">
+                <img ng-repeat="livePoint in ctrl.getShipLivePoints(ship) track by $index" ng-src="{{livePoint?'/Content/assets/hit small.png':'/Content/assets/miss small.png'}}"></img>
+            </div>
+    </div>
+</div>

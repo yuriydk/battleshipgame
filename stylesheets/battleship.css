@@ -1,0 +1,83 @@
+﻿.hit img, .miss img {
+  border: none;
+  width: 100%; }
+
+.battlefield {
+  border: 8px solid #FFB000; }
+  .battlefield table {
+    width: 100%; }
+    .battlefield table td {
+      width: 10%;
+      position: relative;
+      border: 2px solid gray; }
+      .battlefield table td .centered-content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .battlefield table td .centered-content.not-fired:hover {
+          background-color: #25B79F;
+          opacity: 0.3; }
+    .battlefield table td:after {
+      content: '';
+      display: block;
+      margin-top: 100%; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .battlefield {
+    margin-bottom: 15px; } }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .col-xs-1 {
+    padding: 0; }
+  .col-xs-2 {
+    padding: 0; }
+  .col-xs-3 {
+    padding: 0; }
+  .col-xs-4 {
+    padding: 0; }
+  .col-xs-5 {
+    padding: 0; }
+  .col-xs-6 {
+    padding: 0; }
+  .col-xs-7 {
+    padding: 0; }
+  .col-xs-8 {
+    padding: 0; }
+  .col-xs-9 {
+    padding: 0; }
+  .col-xs-10 {
+    padding: 0; }
+  .col-xs-11 {
+    padding: 0; }
+  .col-xs-12 {
+    padding: 0; } }
+
+.scoreboard {
+  text-align: center;
+  height: 150px;
+  font-weight: bold;
+  font-size: 2em; }
+  .scoreboard.player1 {
+    background-color: #FFB000; }
+  .scoreboard.player2 {
+    background-color: #25B79F; }
+  .scoreboard .score {
+    border-bottom: 2px solid gray;
+    font-size: 2em;
+    line-height: 1.6em; }
+
+.ship {
+  margin: 10px 0px; }
+  .ship img {
+    width: 100%; }
+
+.ship-live-points {
+  padding-top: 25px; }
+  .ship-live-points img {
+    width: 15%; }
+

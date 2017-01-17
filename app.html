@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/app/app.js"></script>
+    <link href="/stylesheets/_bootstrap.css"  rel="stylesheet"/>
+    <link href="/stylesheets/battleship.css" rel="stylesheet" />
+
+    <style>
+        
+    </style>
+</head>
+<body ng-app="main" ng-controller="BattleshipController as ctrl">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Battleship</a>
+                <button type="button" class="btn btn-default navbar-btn" ng-click="ctrl.reset()">Reset</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container no-col-paddings-xs"> 
+        <div class="row">
+            <div class="col-md-5 hidden-xs hidden-sm">
+               <info-board></info-board>
+            </div>
+            <div class="col-md-7 col-xs-12">
+                <div class="battlefield">
+                    <table>
+                        <tr ng-repeat="row in ctrl.gameArea track by $index">
+                            <td ng-repeat="cell in row track by $index">
+                                <div class="centered-content" ng-click="ctrl.fire($parent.$index, $index)" ng-class="{'not-fired': cell == null}">
+                                    <span ng-hide="cell == null" ng-class="{'hit': cell, 'miss': !cell}">
+                                        <img ng-show="cell" src="/Content/assets/hit.png"/>
+                                        <img ng-hide="cell" src="/Content/assets/miss.png" />
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 hidden-md hidden-lg">
+                <info-board></info-board>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
